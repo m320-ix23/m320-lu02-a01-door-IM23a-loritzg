@@ -8,8 +8,10 @@ class Door:
   """
 
 # Mit dem Keyword def wird eine Funktion bzw. eben ein Konstruktor deklariert.
-# Der Konstruktor trägt IMMER den Namen __init__ und weist als ersten Parameter den Wert self auf.
-# Danach folgen die Übergabeparameter, deren Werte dann den Attributen zugewiesen werden.
+# Der Konstruktor trägt IMMER den Namen __init__ und weist als e
+  # rsten Parameter den Wert self auf.
+# Danach folgen die Übergabeparameter, deren Werte dann den Attr
+  # ibuten zugewiesen werden.
 # Attribute können aber auch mit einem fixen Wert initialisiert werden.
 # Konstruktoren werden als Erstes im Programm angeschrieben.
 
@@ -19,7 +21,8 @@ class Door:
     :param ref2door_lock:
     :param base_color:
     """
-    # ein privates Attribut muss im Konstruktor initialisiert werden und ist dann in der Klasse
+    # ein privates Attribut muss im Konstruktor initialisiert w
+    # erden und ist dann in der Klasse
     # über self._name_des_Attributs ansprechbar.
     self._the_door_lock = ref2door_lock
     # Hier wird der Setter eines Attributs aufgerufen (siehe unten)
@@ -40,7 +43,8 @@ class Door:
   def close_the_door(self):
     """
     Methode für das schliessen der Türe.
-    Das geht immer, auch wenn die Türe schon geschlossen oder verriegelt ist. Der Zustand ändert
+    Das geht immer, auch wenn die Türe schon geschlossen oder
+    verriegelt ist. Der Zustand ändert
     dann nämlich nicht.
     """
     self._door_is_open = False
@@ -49,7 +53,8 @@ class Door:
     """
     Methode für das verriegeln der Türe.
     Das ist nur möglich, wenn die Türe nicht offen ist.
-    Für das verriegeln ist aber das Türschloss zuständig. Es weiss wie das geht.
+    Für das verriegeln ist aber das Türschloss zuständig. Es
+    weiss wie das geht.
     """
     if not self._door_is_open:
       self._door_is_locked = self._the_door_lock.lock()
@@ -58,7 +63,8 @@ class Door:
     """
     Methode für das entriegeln der Türe
     Das ist nur möglich, wenn die Türe verriegelt ist.
-    Für das entriegeln ist aber das Türschloss zuständig. Es weiss wie das geht.
+    Für das entriegeln ist aber das Türschloss zuständig. Es weiss
+     wie das geht.
     """
     if self._door_is_locked:
       self._door_is_locked = self._the_door_lock.unlock()
@@ -71,7 +77,8 @@ class Door:
           f'Türe offen: {self._door_is_open}'
           f'Türe verriegelt: {self._door_is_locked}')
 
-# Am Ende folgen die getter- und setter-Methoden für die Attribute der Klasse
+# Am Ende folgen die getter- und setter-Methoden für die Attribute
+  # der Klasse
 # getter werden mit der Anotation @property markiert.
 
   @property
